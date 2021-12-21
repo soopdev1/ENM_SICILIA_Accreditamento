@@ -110,21 +110,18 @@ public class Pdf_new {
             createDir(pathtemp);
 
             File pdfOut = new File(pathtemp + username + dataconsegna.toString("ddMMyyyyHHmmSSS") + ".A.pdf");
-            try (InputStream is = new ByteArrayInputStream(decodeBase64(contentb64)); PdfReader reader = new PdfReader(is)) {
-                PdfWriter writer = new PdfWriter(pdfOut);
-                PdfDocument pdfDoc = new PdfDocument(reader, writer);
+            try (InputStream is = new ByteArrayInputStream(decodeBase64(contentb64)); PdfReader reader = new PdfReader(is); PdfWriter writer = new PdfWriter(pdfOut); PdfDocument pdfDoc = new PdfDocument(reader, writer)) {
                 PdfAcroForm form = getAcroForm(pdfDoc, true);
                 form.setGenerateAppearance(true);
                 Map<String, PdfFormField> fields = form.getFormFields();
                 fields.get("privacy0").setValue("On");
 //                fields.get("dataconsegna").setValue(dataconsegna.toString("dd/MM/yyyy"));
-                String cciaa = "";
                 try {
                     String comunecciaa = listavalori.stream().filter(re -> (re.getCampo().equals("comunecciaa"))).findAny().get().getValore().toUpperCase();
                     String proccciaa = listavalori.stream().filter(re -> (re.getCampo().equals("proccciaa"))).findAny().get().getValore().toUpperCase();
                     String regccciaa = listavalori.stream().filter(re -> (re.getCampo().equals("regccciaa"))).findAny().get().getValore().toUpperCase();
                     if (!comunecciaa.equals("") && !proccciaa.equals("") && !regccciaa.equals("")) {
-                        cciaa = comunecciaa + " - " + proccciaa + " - " + regccciaa;
+                        String cciaa = comunecciaa + " - " + proccciaa + " - " + regccciaa;
                         fields.get("cciaa").setValue(cciaa);
                     }
                 } catch (Exception e) {
@@ -166,8 +163,6 @@ public class Pdf_new {
                 }
                 BarcodeQRCode barcode = new BarcodeQRCode(username + " / ALLEGATO A / " + dataconsegna.toString("ddMMyyyyHHmmSSS"));
                 printbarcode(barcode, pdfDoc);
-                pdfDoc.close();
-                writer.close();
             }
             if (checkPDF(pdfOut)) {
                 return pdfOut;
@@ -192,22 +187,18 @@ public class Pdf_new {
             createDir(pathtemp);
             File pdfOut = new File(pathtemp + username + dataconsegna.toString("ddMMyyyyHHmmSSS") + ".B.pdf");
 
-            try (InputStream is = new ByteArrayInputStream(decodeBase64(contentb64)); PdfReader reader = new PdfReader(is)) {
-                PdfWriter writer = new PdfWriter(pdfOut);
-                PdfDocument pdfDoc = new PdfDocument(reader, writer);
+            try (InputStream is = new ByteArrayInputStream(decodeBase64(contentb64)); PdfReader reader = new PdfReader(is); PdfWriter writer = new PdfWriter(pdfOut); PdfDocument pdfDoc = new PdfDocument(reader, writer)) {
 
                 PdfAcroForm form = getAcroForm(pdfDoc, true);
                 form.setGenerateAppearance(true);
                 Map<String, PdfFormField> fields = form.getFormFields();
                 fields.get("privacy0").setValue("On");
-
-                String cciaa = "";
                 try {
                     String comunecciaa = listavalori.stream().filter(re -> (re.getCampo().equals("comunecciaa"))).findAny().get().getValore().toUpperCase();
                     String proccciaa = listavalori.stream().filter(re -> (re.getCampo().equals("proccciaa"))).findAny().get().getValore().toUpperCase();
                     String regccciaa = listavalori.stream().filter(re -> (re.getCampo().equals("regccciaa"))).findAny().get().getValore().toUpperCase();
                     if (!comunecciaa.equals("") && !proccciaa.equals("") && !regccciaa.equals("")) {
-                        cciaa = comunecciaa + " - " + proccciaa + " - " + regccciaa;
+                        String cciaa = comunecciaa + " - " + proccciaa + " - " + regccciaa;
                         fields.get("cciaa").setValue(cciaa);
                     }
                 } catch (Exception e) {
@@ -266,8 +257,6 @@ public class Pdf_new {
                 }
                 BarcodeQRCode barcode = new BarcodeQRCode(username + " / ALLEGATO B / " + dataconsegna.toString("ddMMyyyyHHmmSSS"));
                 printbarcode(barcode, pdfDoc);
-                pdfDoc.close();
-                writer.close();
             }
             if (checkPDF(pdfOut)) {
                 return pdfOut;
@@ -365,9 +354,7 @@ public class Pdf_new {
 
             createDir(pathtemp);
             File pdfOut = new File(pathtemp + username + dataconsegna.toString("ddMMyyyyHHmmSSS") + ".C.pdf");
-            try (InputStream is = new ByteArrayInputStream(decodeBase64(contentb64)); PdfReader reader = new PdfReader(is)) {
-                PdfWriter writer = new PdfWriter(pdfOut);
-                PdfDocument pdfDoc = new PdfDocument(reader, writer);
+            try (InputStream is = new ByteArrayInputStream(decodeBase64(contentb64)); PdfReader reader = new PdfReader(is); PdfWriter writer = new PdfWriter(pdfOut); PdfDocument pdfDoc = new PdfDocument(reader, writer)) {
                 PdfAcroForm form = getAcroForm(pdfDoc, true);
                 form.setGenerateAppearance(true);
                 Map<String, PdfFormField> fields = form.getFormFields();
@@ -395,8 +382,6 @@ public class Pdf_new {
                 }
                 BarcodeQRCode barcode = new BarcodeQRCode(username + " / ALLEGATO C / " + dataconsegna.toString("ddMMyyyyHHmmSSS"));
                 printbarcode(barcode, pdfDoc);
-                pdfDoc.close();
-                writer.close();
             }
             if (checkPDF(pdfOut)) {
                 return pdfOut;
@@ -417,13 +402,9 @@ public class Pdf_new {
             dbb.closeDB();
             createDir(pathtemp);
             File pdfOut = new File(pathtemp + username + dataconsegna.toString("ddMMyyyyHHmmSSS") + ".A.pdf");
-            try (InputStream is = new ByteArrayInputStream(decodeBase64(contentb64)); PdfReader reader = new PdfReader(is)) {
-                PdfWriter writer = new PdfWriter(pdfOut);
-                PdfDocument pdfDoc = new PdfDocument(reader, writer);
+            try (InputStream is = new ByteArrayInputStream(decodeBase64(contentb64)); PdfReader reader = new PdfReader(is); PdfWriter writer = new PdfWriter(pdfOut); PdfDocument pdfDoc = new PdfDocument(reader, writer)) {
                 BarcodeQRCode barcode = new BarcodeQRCode(username + " / ALLEGATO 1 / " + dataconsegna.toString("ddMMyyyyHHmmSSS"));
                 printbarcode(barcode, pdfDoc);
-                pdfDoc.close();
-                writer.close();
             }
             if (checkPDF(pdfOut)) {
                 return pdfOut;
@@ -447,9 +428,7 @@ public class Pdf_new {
 
             createDir(pathtemp);
             File pdfOut = new File(pathtemp + username + dataconsegna.toString("ddMMyyyyHHmmSSS") + ".C2.pdf");
-            try (InputStream is = new ByteArrayInputStream(decodeBase64(contentb64)); PdfReader reader = new PdfReader(is)) {
-                PdfWriter writer = new PdfWriter(pdfOut);
-                PdfDocument pdfDoc = new PdfDocument(reader, writer);
+            try (InputStream is = new ByteArrayInputStream(decodeBase64(contentb64)); PdfReader reader = new PdfReader(is); PdfWriter writer = new PdfWriter(pdfOut); PdfDocument pdfDoc = new PdfDocument(reader, writer)) {
                 PdfAcroForm form = getAcroForm(pdfDoc, true);
                 form.setGenerateAppearance(true);
                 Map<String, PdfFormField> fields = form.getFormFields();
@@ -523,8 +502,6 @@ public class Pdf_new {
                 }
                 BarcodeQRCode barcode = new BarcodeQRCode(username + " / ALLEGATO 2 / " + dataconsegna.toString("ddMMyyyyHHmmSSS"));
                 printbarcode(barcode, pdfDoc);
-                pdfDoc.close();
-                writer.close();
             }
             if (checkPDF(pdfOut)) {
                 return pdfOut;
@@ -546,9 +523,7 @@ public class Pdf_new {
             createDir(pathtemp);
             File pdfOut = new File(pathtemp + username + dataconsegna.toString("ddMMyyyyHHmmSSS") + ".NO.pdf");
             InputStream is = new ByteArrayInputStream(decodeBase64(contentb64));
-            try (PdfReader reader = new PdfReader(is)) {
-                PdfWriter writer = new PdfWriter(pdfOut);
-                PdfDocument pdfDoc = new PdfDocument(reader, writer);
+            try (PdfReader reader = new PdfReader(is); PdfWriter writer = new PdfWriter(pdfOut); PdfDocument pdfDoc = new PdfDocument(reader, writer)) {
                 PdfAcroForm form = getAcroForm(pdfDoc, true);
                 form.setGenerateAppearance(true);
                 Map<String, PdfFormField> fields = form.getFormFields();
@@ -576,8 +551,6 @@ public class Pdf_new {
 
                 printbarcode(barcode, pdfDoc);
 
-                pdfDoc.close();
-                writer.close();
             }
             if (checkPDF(pdfOut)) {
                 return pdfOut;
@@ -649,71 +622,69 @@ public class Pdf_new {
             File pdfOutA = new File(replace(pdf_ing.getPath(), ".pdf", "_pdfA.pdf"));
             FileInputStream in = new FileInputStream(pdf_ing);
             setProperty("sun.java2d.cmm", "sun.java2d.cmm.kcms.KcmsServiceProvider");
-            PDDocument doc = load(pdf_ing);
-            int numPageTOT = 0;
-            Iterator<PDPage> it1 = doc.getPages().iterator();
-            while (it1.hasNext()) {
-                numPageTOT++;
-                it1.next();
-            }
-            PDPage page = new PDPage();
-            doc.setVersion(1.7f);
-            try (PDPageContentStream contents = new PDPageContentStream(doc, page)) {
-                PDDocument docSource = load(in);
-                PDFRenderer pdfRenderer = new PDFRenderer(docSource);
-                for (int i = 0; i < numPageTOT; i++) {
-                    BufferedImage imagePage = pdfRenderer.renderImageWithDPI(i, 200);
-                    PDImageXObject pdfXOImage = createFromImage(doc, imagePage);
-                    contents.drawImage(pdfXOImage, 0, 0, page.getMediaBox().getWidth(), page.getMediaBox().getHeight());
+            try (PDDocument doc = load(pdf_ing)) {
+                int numPageTOT = 0;
+                Iterator<PDPage> it1 = doc.getPages().iterator();
+                while (it1.hasNext()) {
+                    numPageTOT++;
+                    it1.next();
                 }
+                PDPage page = new PDPage();
+                doc.setVersion(1.7f);
+                try (PDPageContentStream contents = new PDPageContentStream(doc, page)) {
+                    PDDocument docSource = load(in);
+                    PDFRenderer pdfRenderer = new PDFRenderer(docSource);
+                    for (int i = 0; i < numPageTOT; i++) {
+                        BufferedImage imagePage = pdfRenderer.renderImageWithDPI(i, 200);
+                        PDImageXObject pdfXOImage = createFromImage(doc, imagePage);
+                        contents.drawImage(pdfXOImage, 0, 0, page.getMediaBox().getWidth(), page.getMediaBox().getHeight());
+                    }
+                }
+                XMPMetadata xmp = createXMPMetadata();
+                PDDocumentCatalog catalogue = doc.getDocumentCatalog();
+                Calendar cal = getInstance();
+                try {
+                    DublinCoreSchema dc = xmp.createAndAddDublinCoreSchema();
+                    dc.addCreator("YISU");
+                    dc.addDate(cal);
+                    PDFAIdentificationSchema id = xmp.createAndAddPFAIdentificationSchema();
+                    id.setPart(3);  //value => 2|3
+                    id.setConformance("A"); // value => A|B|U
+                    XmpSerializer serializer = new XmpSerializer();
+                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                    serializer.serialize(xmp, baos, true);
+                    PDMetadata metadata = new PDMetadata(doc);
+                    metadata.importXMPMetadata(baos.toByteArray());
+                    catalogue.setMetadata(metadata);
+                } catch (BadFieldValueException e) {
+                    throw new IllegalArgumentException(e);
+                }
+                InputStream colorProfile = new ByteArrayInputStream(byteICC);
+                PDOutputIntent intent = new PDOutputIntent(doc, colorProfile);
+                intent.setInfo("sRGB IEC61966-2.1");
+                intent.setOutputCondition("sRGB IEC61966-2.1");
+                intent.setOutputConditionIdentifier("sRGB IEC61966-2.1");
+                intent.setRegistryName("http://www.color.org");
+                catalogue.addOutputIntent(intent);
+                catalogue.setLanguage("it-IT");
+                PDViewerPreferences pdViewer = new PDViewerPreferences(page.getCOSObject());
+                pdViewer.setDisplayDocTitle(true);
+                catalogue.setViewerPreferences(pdViewer);
+                PDMarkInfo mark = new PDMarkInfo(); // new PDMarkInfo(page.getCOSObject());
+                PDStructureTreeRoot treeRoot = new PDStructureTreeRoot();
+                catalogue.setMarkInfo(mark);
+                catalogue.setStructureTreeRoot(treeRoot);
+                catalogue.getMarkInfo().setMarked(true);
+                PDDocumentInformation info = doc.getDocumentInformation();
+                info.setCreationDate(cal);
+                info.setModificationDate(cal);
+                info.setAuthor("YISU");
+                info.setProducer("YISU");
+                info.setCreator("YISU");
+                info.setTitle(nomepdf);
+                info.setSubject("PDF/A");
+                doc.save(pdfOutA);
             }
-            XMPMetadata xmp = createXMPMetadata();
-            PDDocumentCatalog catalogue = doc.getDocumentCatalog();
-            Calendar cal = getInstance();
-            try {
-                DublinCoreSchema dc = xmp.createAndAddDublinCoreSchema();
-                dc.addCreator("YISU");
-                dc.addDate(cal);
-                PDFAIdentificationSchema id = xmp.createAndAddPFAIdentificationSchema();
-                id.setPart(3);  //value => 2|3
-                id.setConformance("A"); // value => A|B|U
-                XmpSerializer serializer = new XmpSerializer();
-                ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                serializer.serialize(xmp, baos, true);
-                PDMetadata metadata = new PDMetadata(doc);
-                metadata.importXMPMetadata(baos.toByteArray());
-                catalogue.setMetadata(metadata);
-            } catch (BadFieldValueException e) {
-                throw new IllegalArgumentException(e);
-            }
-            InputStream colorProfile = new ByteArrayInputStream(byteICC);
-            PDOutputIntent intent = new PDOutputIntent(doc, colorProfile);
-            intent.setInfo("sRGB IEC61966-2.1");
-            intent.setOutputCondition("sRGB IEC61966-2.1");
-            intent.setOutputConditionIdentifier("sRGB IEC61966-2.1");
-            intent.setRegistryName("http://www.color.org");
-            catalogue.addOutputIntent(intent);
-            catalogue.setLanguage("it-IT");
-            PDViewerPreferences pdViewer = new PDViewerPreferences(page.getCOSObject());
-            pdViewer.setDisplayDocTitle(true);
-            catalogue.setViewerPreferences(pdViewer);
-            PDMarkInfo mark = new PDMarkInfo(); // new PDMarkInfo(page.getCOSObject()); 
-            PDStructureTreeRoot treeRoot = new PDStructureTreeRoot();
-            catalogue.setMarkInfo(mark);
-            catalogue.setStructureTreeRoot(treeRoot);
-            catalogue.getMarkInfo().setMarked(true);
-
-            PDDocumentInformation info = doc.getDocumentInformation();
-            info.setCreationDate(cal);
-            info.setModificationDate(cal);
-            info.setAuthor("YISU");
-            info.setProducer("YISU");
-            info.setCreator("YISU");
-            info.setTitle(nomepdf);
-            info.setSubject("PDF/A");
-
-            doc.save(pdfOutA);
-            doc.close();
             return pdfOutA;
         } catch (Exception e) {
             trackingAction("ERROR SYSTEM", estraiEccezione(e));
@@ -810,14 +781,14 @@ public class Pdf_new {
     //UTIL
     public static SignedDoc extractSignatureInformation_P7M(byte[] p7m_bytes) {
         SignedDoc doc = new SignedDoc();
-        CMSSignedData cms = null;
+        CMSSignedData cms;
         try {
             cms = new CMSSignedData(p7m_bytes);
         } catch (CMSException e) {
             doc.setErrore("ERRORE NEL FILE - " + e.getMessage());
             return doc;
         }
-        if (cms == null || cms.getSignedContent() == null) {
+        if (cms.getSignedContent() == null) {
             doc.setErrore("ERRORE NEL FILE - CONTENUTO ERRATO");
             return doc;
         }
@@ -976,38 +947,40 @@ public class Pdf_new {
                         Result result = new QRCodeReader().decode(bitmap);
                         String qr = result.getText().toUpperCase();
                         if (qr.contains(username.toUpperCase())) {
-                            if (codicedoc.equals("DONLA")) {
-                                if (qr.contains("ALLEGATO A")) {
-                                    out = "OK";
-                                } else {
+                            switch (codicedoc) {
+                                case "DONLA":
+                                    if (qr.contains("ALLEGATO A")) {
+                                        out = "OK";
+                                    } else {
+                                        out = "ERRORE - DOCUMENTO NON CORRISPONDE A QUANTO RICHIESTO";
+                                    }   break;
+                                case "DONLB":
+                                    if (qr.contains("ALLEGATO B")) {
+                                        out = "OK";
+                                    } else {
+                                        out = "ERRORE - DOCUMENTO NON CORRISPONDE A QUANTO RICHIESTO";
+                                    }   break;
+                                case "CONV":
+                                    if (qr.contains("ALLEGATO C")) {
+                                        out = "OK";
+                                    } else {
+                                        out = "ERRORE - DOCUMENTO NON CORRISPONDE A QUANTO RICHIESTO";
+                                    }   break;
+                                case "MOD1":
+                                    if (qr.contains("ALLEGATO 1")) {
+                                        out = "OK";
+                                    } else {
+                                        out = "ERRORE - DOCUMENTO NON CORRISPONDE A QUANTO RICHIESTO";
+                                    }   break;
+                                case "MOD2":
+                                    if (qr.contains("ALLEGATO 2")) {
+                                        out = "OK";
+                                    } else {
+                                        out = "ERRORE - DOCUMENTO NON CORRISPONDE A QUANTO RICHIESTO";
+                                    }   break;
+                                default:
                                     out = "ERRORE - DOCUMENTO NON CORRISPONDE A QUANTO RICHIESTO";
-                                }
-                            } else if (codicedoc.equals("DONLB")) {
-                                if (qr.contains("ALLEGATO B")) {
-                                    out = "OK";
-                                } else {
-                                    out = "ERRORE - DOCUMENTO NON CORRISPONDE A QUANTO RICHIESTO";
-                                }
-                            } else if (codicedoc.equals("CONV")) {
-                                if (qr.contains("ALLEGATO C")) {
-                                    out = "OK";
-                                } else {
-                                    out = "ERRORE - DOCUMENTO NON CORRISPONDE A QUANTO RICHIESTO";
-                                }
-                            } else if (codicedoc.equals("MOD1")) {
-                                if (qr.contains("ALLEGATO 1")) {
-                                    out = "OK";
-                                } else {
-                                    out = "ERRORE - DOCUMENTO NON CORRISPONDE A QUANTO RICHIESTO";
-                                }
-                            } else if (codicedoc.equals("MOD2")) {
-                                if (qr.contains("ALLEGATO 2")) {
-                                    out = "OK";
-                                } else {
-                                    out = "ERRORE - DOCUMENTO NON CORRISPONDE A QUANTO RICHIESTO";
-                                }
-                            } else {
-                                out = "ERRORE - DOCUMENTO NON CORRISPONDE A QUANTO RICHIESTO";
+                                    break;
                             }
                         } else {
                             out = "ERRORE - USERNAME NON CORRISPONDE";
@@ -1059,38 +1032,40 @@ public class Pdf_new {
                             Result result = new QRCodeReader().decode(bitmap);
                             String qr = result.getText().toUpperCase();
                             if (qr.contains(username.toUpperCase())) {
-                                if (codicedoc.equals("DONLA")) {
-                                    if (qr.contains("ALLEGATO A")) {
-                                        out = "OK";
-                                    } else {
+                                switch (codicedoc) {
+                                    case "DONLA":
+                                        if (qr.contains("ALLEGATO A")) {
+                                            out = "OK";
+                                        } else {
+                                            out = "ERRORE - DOCUMENTO NON CORRISPONDE A QUANTO RICHIESTO";
+                                        }   break;
+                                    case "DONLB":
+                                        if (qr.contains("ALLEGATO B")) {
+                                            out = "OK";
+                                        } else {
+                                            out = "ERRORE - DOCUMENTO NON CORRISPONDE A QUANTO RICHIESTO";
+                                        }   break;
+                                    case "CONV":
+                                        if (qr.contains("ALLEGATO C")) {
+                                            out = "OK";
+                                        } else {
+                                            out = "ERRORE - DOCUMENTO NON CORRISPONDE A QUANTO RICHIESTO";
+                                        }   break;
+                                    case "MOD1":
+                                        if (qr.contains("ALLEGATO 1")) {
+                                            out = "OK";
+                                        } else {
+                                            out = "ERRORE - DOCUMENTO NON CORRISPONDE A QUANTO RICHIESTO";
+                                        }   break;
+                                    case "MOD2":
+                                        if (qr.contains("ALLEGATO 2")) {
+                                            out = "OK";
+                                        } else {
+                                            out = "ERRORE - DOCUMENTO NON CORRISPONDE A QUANTO RICHIESTO";
+                                        }   break;
+                                    default:
                                         out = "ERRORE - DOCUMENTO NON CORRISPONDE A QUANTO RICHIESTO";
-                                    }
-                                } else if (codicedoc.equals("DONLB")) {
-                                    if (qr.contains("ALLEGATO B")) {
-                                        out = "OK";
-                                    } else {
-                                        out = "ERRORE - DOCUMENTO NON CORRISPONDE A QUANTO RICHIESTO";
-                                    }
-                                } else if (codicedoc.equals("CONV")) {
-                                    if (qr.contains("ALLEGATO C")) {
-                                        out = "OK";
-                                    } else {
-                                        out = "ERRORE - DOCUMENTO NON CORRISPONDE A QUANTO RICHIESTO";
-                                    }
-                                } else if (codicedoc.equals("MOD1")) {
-                                    if (qr.contains("ALLEGATO 1")) {
-                                        out = "OK";
-                                    } else {
-                                        out = "ERRORE - DOCUMENTO NON CORRISPONDE A QUANTO RICHIESTO";
-                                    }
-                                } else if (codicedoc.equals("MOD2")) {
-                                    if (qr.contains("ALLEGATO 2")) {
-                                        out = "OK";
-                                    } else {
-                                        out = "ERRORE - DOCUMENTO NON CORRISPONDE A QUANTO RICHIESTO";
-                                    }
-                                } else {
-                                    out = "ERRORE - DOCUMENTO NON CORRISPONDE A QUANTO RICHIESTO";
+                                        break;
                                 }
                             } else {
                                 out = "ERRORE - USERNAME NON CORRISPONDE";
@@ -1117,10 +1092,8 @@ public class Pdf_new {
         if (pdffile.exists()) {
             try {
                 int pag;
-                try (InputStream is = new FileInputStream(pdffile); PdfReader pdfReader = new PdfReader(is)) {
-                    PdfDocument pd = new PdfDocument(pdfReader);
+                try (InputStream is = new FileInputStream(pdffile); PdfReader pdfReader = new PdfReader(is); PdfDocument pd = new PdfDocument(pdfReader)) {
                     pag = pd.getNumberOfPages();
-                    pd.close();
                 }
                 return pag > 0;
             } catch (IOException e) {
