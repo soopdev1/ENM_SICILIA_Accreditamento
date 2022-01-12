@@ -82,10 +82,10 @@ public class Db_Bando {
         String password = "bando";
         String host = "clustermicrocredito.cluster-c6m6yfqeypv3.eu-south-1.rds.amazonaws.com:3306/enm_neet_prod";
 
-        if (test) {
-            host = "clustermicrocredito.cluster-c6m6yfqeypv3.eu-south-1.rds.amazonaws.com:3306/enm_neet";
-//            host = "172.31.224.159:3306/enm_neet";
-        }
+//        if (test) {
+//            host = "clustermicrocredito.cluster-c6m6yfqeypv3.eu-south-1.rds.amazonaws.com:3306/enm_neet";
+////            host = "172.31.224.159:3306/enm_neet";
+//        }
 
         try {
             forName(driver).newInstance();
@@ -98,17 +98,17 @@ public class Db_Bando {
             p.put("connectTimeout", "1000");
             p.put("useUnicode", "true");
             
-            if (demo) {
-                p.put("useJDBCCompliantTimezoneShift", "true");
-                p.put("useLegacyDatetimeCode", "false");
-                p.put("serverTimezone", "UTC");
-            }
+//            if (demo) {
+//                p.put("useJDBCCompliantTimezoneShift", "true");
+//                p.put("useLegacyDatetimeCode", "false");
+//                p.put("serverTimezone", "UTC");
+//            }
             
             this.c = DriverManager.getConnection("jdbc:mysql://" + host, p);
 //            boolean ok = connesso(this.c);
 //            System.out.println("HOST: " + host + " - CONNESSO " + ok + " - ISDBTEST: " + test);
         } catch (Exception ex) {
-            insertTracking("ERROR SYSTEM", estraiEccezione(ex));
+            System.err.println(estraiEccezione(ex));
             if (this.c != null) {
                 try {
                     this.c.close();
