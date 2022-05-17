@@ -20,7 +20,7 @@ public class Constant {
     public static final boolean demo = false;
     public static final boolean faq = true;
     public static final String nomevisual = "YES I START UP - NEET";
-    public static final String version = "1.0.9";
+    public static final String version = "1.0.10";
     
     
     //Classic

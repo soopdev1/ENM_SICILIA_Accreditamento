@@ -16,6 +16,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
+import java.util.ResourceBundle;
 
 /**
  *
@@ -24,23 +25,14 @@ import java.util.Properties;
 public class Db_OTP {
 
     private Connection conn = null;
+    private static final ResourceBundle conf = ResourceBundle.getBundle("conf.conf");
 
     public Db_OTP() {
 
         String driver = "com.mysql.cj.jdbc.Driver";
-        String user = "bando";
-        String password = "bando";
-        String host = "clustermicrocredito.cluster-c6m6yfqeypv3.eu-south-1.rds.amazonaws.com:3306/enm_otp";
-
-//        if (test) {
-//            host = "clustermicrocredito.cluster-c6m6yfqeypv3.eu-south-1.rds.amazonaws.com:3306/enm_neet";
-//
-////            driver = "org.mariadb.jdbc.Driver";
-////            host = "172.31.224.56:3306/enm_otp";
-////            user = "bando";
-////            password = "bando";
-//
-//        }
+        String user = conf.getString("db.user");
+        String password = conf.getString("db.pass");
+        String host = conf.getString("db.host") + ":3306/enm_otp";
 
         try {
             forName(driver).newInstance();
