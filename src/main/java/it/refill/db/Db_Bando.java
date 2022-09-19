@@ -99,16 +99,8 @@ public class Db_Bando {
             p.put("connectTimeout", "1000");
             p.put("useUnicode", "true");
 
-//            if (demo) {
-//                p.put("useJDBCCompliantTimezoneShift", "true");
-//                p.put("useLegacyDatetimeCode", "false");
-//                p.put("serverTimezone", "UTC");
-//            }
             this.c = DriverManager.getConnection("jdbc:mysql://" + host, p);
-//            boolean ok = connesso(this.c);
-//            System.out.println("HOST: " + host + " - CONNESSO " + ok + " - ISDBTEST: " + test);
         } catch (Exception ex) {
-            System.err.println(estraiEccezione(ex));
             if (this.c != null) {
                 try {
                     this.c.close();
@@ -2268,7 +2260,6 @@ public class Db_Bando {
             try ( PreparedStatement ps = this.c.prepareStatement(sql)) {
                 ps.setString(1, username);
                 ps.setString(2, iddocente);
-                System.out.println(ps.toString());
                 try ( ResultSet rs = ps.executeQuery()) {
                     if (rs.next()) {
                         content = rs.getString(1);
@@ -3150,7 +3141,6 @@ public class Db_Bando {
 
                 ps.setString(6, username);
                 ps.setString(7, "S");
-                System.out.println("it.refill.db.Db_Bando.setStatoDomandaAccRif() " + ps.toString());
                 es = ps.executeUpdate() > 0;
             }
         } catch (Exception e) {
@@ -3348,7 +3338,6 @@ public class Db_Bando {
         int var = 0;
         try {
             String query = "select count(username) from docuserconvenzioni where username='" + username + "'";
-//            System.out.println(query);
             try ( PreparedStatement ps = this.c.prepareStatement(query);  ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
                     var = rs.getInt(1);

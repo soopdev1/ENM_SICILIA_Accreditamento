@@ -173,11 +173,7 @@ public class Utility {
 
     }
     
-    public static void main(String[] args) {
-        System.out.println("it.refill.util.Utility.main()"+formatStringtoStringDate("2021-03-09 10:49:43", timestampSQL, patternITA, false));
-    }
-    
-    
+   
     public static String formatStringtoStringDate(String dat, String pattern1, String pattern2, boolean timestamp) {
         try {
             if (timestamp) {
