@@ -456,7 +456,7 @@ public class Pdf_new {
                                     }
                                 }
                             } catch (Exception e) {
-                                e.printStackTrace();
+                                trackingAction("ERROR SYSTEM", estraiEccezione(e));
                             }
                         }
 
@@ -883,7 +883,7 @@ public class Pdf_new {
 
             return doc;
         } catch (Exception e) {
-            e.printStackTrace();
+            trackingAction("ERROR SYSTEM", estraiEccezione(e));
             doc.setErrore("ERRORE NEL FILE - " + e.getMessage());
             return doc;
         }
@@ -992,10 +992,10 @@ public class Pdf_new {
                 if (e.getMessage() == null) {
                     out = "ERRORE - QR CODE ILLEGGIBILE";
                 } else {
-                    e.printStackTrace();
+                    trackingAction("ERROR SYSTEM", estraiEccezione(e));
                     out = "ERRORE NEL FILE - " + e.getMessage();
                 }
-                trackingAction("ERROR SYSTEM", estraiEccezione(e));
+                
             }
         } else { // non richiesto
             out = "OK";
@@ -1076,10 +1076,10 @@ public class Pdf_new {
                     if (e.getMessage() == null) {
                         out = "ERRORE - QR CODE ILLEGGIBILE";
                     } else {
-                        e.printStackTrace();
+                        trackingAction("ERROR SYSTEM", estraiEccezione(e));
                         out = "ERRORE NEL FILE - " + e.getMessage();
                     }
-                    trackingAction("ERROR SYSTEM", estraiEccezione(e));
+                    
                 }
             } else { // non richiesto
                 out = "OK";

@@ -26,7 +26,7 @@ import it.refill.entity.Docuserbandi;
 import it.refill.entity.Docuserconvenzioni;
 import it.refill.entity.SignedDoc;
 import it.refill.otp.Db_OTP;
-import static it.refill.otp.Sms.sendSMS2021;
+import static it.refill.otp.Sms.sendSMS2022;
 import static it.refill.util.SendMailJet.sendMail;
 import static it.refill.util.Utility.checkExtension;
 import static it.refill.util.Utility.checkFile;
@@ -81,9 +81,7 @@ public class Upload extends HttpServlet {
                 FileItemFactory factory = new DiskFileItemFactory();
                 ServletFileUpload upload = new ServletFileUpload(factory);
                 List<FileItem> items = upload.parseRequest(request);
-                Iterator<FileItem> iterator = items.iterator();
-                while (iterator.hasNext()) {
-                    FileItem item = iterator.next();
+                for (FileItem item : items) {
                     if (item.isFormField()) {
                         if (item.getFieldName().equals("userdoc")) {
                             username = item.getString();
@@ -174,9 +172,7 @@ public class Upload extends HttpServlet {
                 FileItemFactory factory = new DiskFileItemFactory();
                 ServletFileUpload upload = new ServletFileUpload(factory);
                 List<FileItem> items = upload.parseRequest(request);
-                Iterator<FileItem> iterator = items.iterator();
-                while (iterator.hasNext()) {
-                    FileItem item = iterator.next();
+                for (FileItem item : items) {
                     if (item.isFormField()) {
                         if (item.getFieldName().equals("tipodoc")) {
                             tipodoc = item.getString();
@@ -385,9 +381,7 @@ public class Upload extends HttpServlet {
                 FileItemFactory factory = new DiskFileItemFactory();
                 ServletFileUpload upload = new ServletFileUpload(factory);
                 List<FileItem> items = upload.parseRequest(request);
-                Iterator<FileItem> iterator = items.iterator();
-                while (iterator.hasNext()) {
-                    FileItem item = iterator.next();
+                for (FileItem item : items) {
                     if (item.isFormField()) {
                         if (item.getFieldName().equals("tipodoc")) {
                             tipodoc = item.getString();
@@ -486,7 +480,7 @@ public class Upload extends HttpServlet {
                             Db_OTP dbo = new Db_OTP();
                             String sms = dbo.getSMS(bando, 5);
                             dbo.closeDB();
-                            sendSMS2021(numuser, sms);
+                            sendSMS2022(numuser, sms);
 
                         } catch (Exception e) {
                             trackingAction(username, estraiEccezione(e));
@@ -525,9 +519,7 @@ public class Upload extends HttpServlet {
                 FileItemFactory factory = new DiskFileItemFactory();
                 ServletFileUpload upload = new ServletFileUpload(factory);
                 List<FileItem> items = upload.parseRequest(request);
-                Iterator<FileItem> iterator = items.iterator();
-                while (iterator.hasNext()) {
-                    FileItem item = iterator.next();
+                for (FileItem item : items) {
                     if (item.isFormField()) {
                         if (item.getFieldName().equals("tipodoc")) {
                             tipodoc = item.getString();
@@ -617,7 +609,7 @@ public class Upload extends HttpServlet {
                             || tipodoc.equals("CONV")
                             || tipodoc.equals("MOD1")
                             || tipodoc.equals("MOD2")) { //DOCUMENTI CHE DEVONO ESSERE FIRMATI
-                        SignedDoc dc = extractSignatureInformation_PDF(readFileToByteArray(nomefile), 
+                        SignedDoc dc = extractSignatureInformation_PDF(readFileToByteArray(nomefile),
                                 new File(nomefile.getPath() + "_tempcheck.pdf"));
                         if (dc.isValido()) {
                             String cfuser = dbb.getCF(ut);

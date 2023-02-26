@@ -60,8 +60,7 @@ public class Db_OTP {
     public Db_OTP(Connection conn) {
         try {
             this.conn = conn;
-        } catch (Exception ex) {
-            ex.printStackTrace();
+        } catch (Exception ex) {            
         }
     }
 

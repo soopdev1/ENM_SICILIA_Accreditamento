@@ -50,7 +50,7 @@ import static it.refill.util.Utility.generaId;
 import static it.refill.util.Utility.redirect;
 import static it.refill.otp.OTP.generaOTP;
 import static it.refill.otp.OTP.verificaOTP;
-import static it.refill.otp.Sms.sendSMS2021;
+import static it.refill.otp.Sms.sendSMS2022;
 import static it.refill.util.GoogleRecaptcha.isValid;
 import static it.refill.util.SendMailJet.sendMail;
 import static it.refill.util.SendMailJet.sendMailListAttach;
@@ -436,7 +436,7 @@ public class Operazioni extends HttpServlet {
                         Db_OTP db = new Db_OTP();
                         String msg = db.getSMS(bando, 3);
                         db.closeDB();
-                        sendSMS2021(numuser, msg);
+                        sendSMS2022(numuser, msg);
 
                         trackingAction(username, "Invio domanda partecipazione: " + bandorif + " Id domanda: " + idd);
                         redirect(request, response, "bando_index.jsp?esito=okinvio");
@@ -717,7 +717,7 @@ public class Operazioni extends HttpServlet {
                 String msg = dbo.getSMS(bando, 4);
                 dbo.closeDB();
 
-                sendSMS2021(numuser, msg);
+                sendSMS2022(numuser, msg);
 
             } catch (Exception ex) {
                 trackingAction("ERROR SYSTEM", estraiEccezione(ex));
@@ -769,7 +769,7 @@ public class Operazioni extends HttpServlet {
                 String msg = dbo.getSMS(bando, 4);
                 dbo.closeDB();
 
-                sendSMS2021(numuser, msg);
+                sendSMS2022(numuser, msg);
 
             } catch (Exception ex) {
                 trackingAction("ERROR SYSTEM", estraiEccezione(ex));
@@ -1508,11 +1508,8 @@ public class Operazioni extends HttpServlet {
                         break;
                 }
             }
-        } catch (ServletException | IOException ex) {
-            StringWriter sw = new StringWriter();
-            PrintWriter pw = new PrintWriter(sw);
-            ex.printStackTrace(pw);
-            trackingAction("service", "Error:processRequestOperazioni: " + sw.toString());
+        } catch (Exception ex) {
+            trackingAction("ERROR SYSTEM", estraiEccezione(ex));
         }
     }
 

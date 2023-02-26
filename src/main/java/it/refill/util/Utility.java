@@ -2,7 +2,6 @@ package it.refill.util;
 
 import static com.google.common.base.Splitter.on;
 import static it.refill.action.ActionB.trackingAction;
-import static it.refill.action.Constant.patternITA;
 import static it.refill.action.Constant.timestampITA;
 import static it.refill.action.Constant.timestampSQL;
 import it.refill.db.Db_Bando;

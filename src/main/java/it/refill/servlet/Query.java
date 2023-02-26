@@ -11,6 +11,7 @@ import static it.refill.action.ActionB.getConvenzioneROMA;
 import static it.refill.action.ActionB.getDomandeComplete;
 import static it.refill.action.ActionB.getInvioEmailROMA;
 import static it.refill.action.ActionB.getRagioneSociale;
+import static it.refill.action.ActionB.trackingAction;
 import static it.refill.action.Constant.timestampITA;
 import static it.refill.action.Constant.timestampSQL;
 import it.refill.db.Db_Bando;
@@ -18,6 +19,7 @@ import it.refill.entity.Ateco;
 import it.refill.entity.Comuni_rc;
 import it.refill.entity.Domandecomplete;
 import it.refill.util.Utility;
+import static it.refill.util.Utility.estraiEccezione;
 import static it.refill.util.Utility.formatStringtoStringDate;
 import static it.refill.util.Utility.formatUTFtoLatin;
 import static it.refill.util.Utility.getRequestValue;
@@ -143,8 +145,8 @@ public class Query extends HttpServlet {
                     out.print(inizio + fine);
                 }
             }
-        } catch (ParseException ex) {
-            ex.printStackTrace();
+        } catch (Exception ex) {
+            trackingAction("ERROR SYSTEM", estraiEccezione(ex));
         }
     }
 
