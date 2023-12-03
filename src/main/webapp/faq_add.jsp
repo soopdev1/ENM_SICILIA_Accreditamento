@@ -1,16 +1,16 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
-<%@page import="it.refill.action.Constant"%>
-<%@page import="it.refill.entity.Faq"%>
+<%@page import="rc.so.action.Constant"%>
+<%@page import="rc.so.entity.Faq"%>
 <%@page import="java.util.List"%>
 <%@page import="org.apache.commons.lang3.RandomStringUtils"%>
 <%@page import="org.apache.commons.text.RandomStringGenerator"%>
-<%@page import="it.refill.entity.Domandecomplete"%>
-<%@page import="it.refill.entity.Docbandi"%>
-<%@page import="it.refill.entity.Docuserbandi"%>
+<%@page import="rc.so.entity.Domandecomplete"%>
+<%@page import="rc.so.entity.Docbandi"%>
+<%@page import="rc.so.entity.Docuserbandi"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="it.refill.action.Liste"%>
-<%@page import="it.refill.action.ActionB"%>
-<%@page import="it.refill.util.Utility"%>
+<%@page import="rc.so.action.Liste"%>
+<%@page import="rc.so.action.ActionB"%>
+<%@page import="rc.so.util.Utility"%>
 <!DOCTYPE html>
 <%
     if (session.getAttribute("username") == null) {
@@ -26,7 +26,7 @@
         <meta content="" name="description" />
         <meta content="" name="author" />
         <!-- BEGIN GLOBAL MANDATORY STYLES -->
-        <link href="assets/seta/fontg/fontsgoogle1.css" rel="stylesheet" type="text/css" />
+        <link href="assets/soop/fontg/fontsgoogle1.css" rel="stylesheet" type="text/css" />
 
         <link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
@@ -50,7 +50,7 @@
         <!-- BEGIN THEME GLOBAL STYLES -->
         <link href="assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
         <link href="assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
-        <script src="assets/seta/js/moment.js" type="text/javascript"></script>
+        <script src="assets/soop/js/moment.js" type="text/javascript"></script>
 
         <!-- END THEME GLOBAL STYLES -->
         <!-- BEGIN THEME LAYOUT STYLES -->
@@ -61,7 +61,7 @@
         <link href="assets/pages/css/faq.min.css" rel="stylesheet" type="text/css" />
         <!-- END THEME LAYOUT STYLES -->
         <link rel="shortcut icon" href="favicon.ico" /> 
-        <script type="text/javascript" src="assets/seta/js/jquery-1.10.1.min.js"></script>
+        <script type="text/javascript" src="assets/soop/js/jquery-1.10.1.min.js"></script>
 
         <%
             String username = session.getAttribute("username").toString();
@@ -214,7 +214,7 @@
     <script src="assets/global/plugins/jquery-easypiechart/jquery.easypiechart.min.js" type="text/javascript"></script>
     <!-- END CORE PLUGINS -->
     <!-- BEGIN PAGE LEVEL PLUGINS -->
-    <script src="assets/seta/js/select2.full.min.js" type="text/javascript"></script>
+    <script src="assets/soop/js/select2.full.min.js" type="text/javascript"></script>
     <script src="assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js" type="text/javascript"></script>
     <!-- END PAGE LEVEL PLUGINS -->
     <!-- BEGIN THEME GLOBAL SCRIPTS -->
@@ -226,7 +226,7 @@
     <script src="assets/global/plugins/bootstrap-select/js/bootstrap-select.min.js" type="text/javascript"></script>
     <script src="assets/pages/scripts/components-bootstrap-select.min.js" type="text/javascript"></script>
     <script src="assets/pages/scripts/components-date-time-pickers.min.js" type="text/javascript"></script>
-    <script src="assets/seta/js/form-input-mask.min.js" type="text/javascript"></script>
+    <script src="assets/soop/js/form-input-mask.min.js" type="text/javascript"></script>
     <script src="assets/global/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
 
     <!-- END PAGE LEVEL SCRIPTS -->
@@ -234,7 +234,7 @@
     <script src="assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
     <script src="assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
 
-    <script src="assets/seta/tinymce/tinymce.min.js?apiKey=ma1upy7t6aft708fnem5ewb25zj40b36gdnl9ovb046gcbqx"></script>
+    <script src="assets/soop/tinymce/tinymce.min.js?apiKey=ma1upy7t6aft708fnem5ewb25zj40b36gdnl9ovb046gcbqx"></script>
     <script>
 
             function checkfaq() {

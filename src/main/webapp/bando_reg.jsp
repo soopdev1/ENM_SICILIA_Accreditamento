@@ -1,12 +1,12 @@
 <%@page import="java.util.List"%>
-<%@page import="it.refill.util.Utility"%>
-<%@page import="it.refill.entity.Items"%>
-<%@page import="it.refill.entity.Comuni_rc"%>
-<%@page import="it.refill.entity.Prov_rc"%>
-<%@page import="it.refill.action.Constant"%>
-<%@page import="it.refill.action.ActionB"%>
+<%@page import="rc.so.util.Utility"%>
+<%@page import="rc.so.entity.Items"%>
+<%@page import="rc.so.entity.Comuni_rc"%>
+<%@page import="rc.so.entity.Prov_rc"%>
+<%@page import="rc.so.action.Constant"%>
+<%@page import="rc.so.action.ActionB"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="it.refill.entity.Registrazione"%>
+<%@page import="rc.so.entity.Registrazione"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
@@ -23,7 +23,7 @@
         <meta content="" name="description" />
         <meta content="" name="author" />
         <!-- BEGIN GLOBAL MANDATORY STYLES -->
-        <link href="assets/seta/fontg/fontsgoogle1.css" rel="stylesheet" type="text/css" />
+        <link href="assets/soop/fontg/fontsgoogle1.css" rel="stylesheet" type="text/css" />
         <link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -53,10 +53,10 @@
         <link rel="shortcut icon" href="favicon.ico" /> 
 
         <script src="https://www.google.com/recaptcha/api.js?render=<%=ActionB.getPath("recaptchapublic")%>"></script>
-        <script id="registration" src="assets/seta/js/Registration.js"
+        <script id="registration" src="assets/soop/js/Registration.js"
         data-context="<%=request.getContextPath()%>" data-gKey="<%=ActionB.getPath("recaptchapublic")%>" type="text/javascript"></script>
-        <script src="assets/seta/js/jscontrolli.js"></script>
-        <script src="assets/seta/js/validate.min.js"></script>
+        <script src="assets/soop/js/jscontrolli.js"></script>
+        <script src="assets/soop/js/validate.min.js"></script>
 
 
         <!-- BEGIN CORE PLUGINS -->
@@ -87,7 +87,7 @@
         <script src="assets/global/plugins/bootstrap-select/js/bootstrap-select.min.js" type="text/javascript"></script>
         <script src="assets/pages/scripts/components-bootstrap-select.min.js" type="text/javascript"></script>
         <script src="assets/pages/scripts/components-date-time-pickers.min.js" type="text/javascript"></script>
-        <script src="assets/seta/js/form-input-mask.min.js" type="text/javascript"></script>
+        <script src="assets/soop/js/form-input-mask.min.js" type="text/javascript"></script>
         <!-- END PAGE LEVEL SCRIPTS -->
         <!-- BEGIN THEME LAYOUT SCRIPTS -->
         <script src="assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
@@ -354,15 +354,12 @@
                                 <div class="col-md-6"><center>
                                         <table>
                                             <tr>
-                                                <td><img src="assets/seta/img/l3-cu.png" alt="" height="54px"/></td>
-                                                <td><img src="assets/seta/img/l2-gg.png" alt="" height="54px"/></td>
-                                                <td><img src="assets/seta/img/l1-an.png" alt="" height="54px"/></td>
-                                                <td><img src="assets/seta/img/l4-yis.png" alt="" height="54px"/></td>
+                                                <td><img src="assets/soop/img/ban1.jpg" alt="" height="125px"/></td>
                                             </tr>
                                         </table>
                                     </center> 
                                 </div>
-                                <div class="col-md-3" style="text-align: right;"><img src="assets/seta/img/logo_blue_1.png" alt="logo" height="74px" class="img-responsivelogo"/></div> 
+                                <div class="col-md-3" style="text-align: right;"><img src="assets/soop/img/logo_blue_1.png" alt="logo" height="74px" class="img-responsivelogo"/></div> 
                             </div>                         
                         </div>
 

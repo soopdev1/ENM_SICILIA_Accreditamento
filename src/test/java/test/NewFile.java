@@ -4,15 +4,15 @@
  */
 package test;
 
-import static it.refill.action.ActionB.preparefilefordownload;
-import static it.refill.action.ActionB.preparefileforupload;
-import static it.refill.action.Pdf_new.allegatoC;
-import static it.refill.action.Pdf_new.extractSignatureInformation_P7M;
-import static it.refill.action.Pdf_new.nullaosta;
-import it.refill.db.Db_Bando;
-import it.refill.entity.Docuserconvenzioni;
-import it.refill.entity.FileDownload;
-import it.refill.entity.SignedDoc;
+import static rc.so.action.ActionB.preparefilefordownload;
+import static rc.so.action.ActionB.preparefileforupload;
+import static rc.so.action.Pdf_new.allegatoC;
+import static rc.so.action.Pdf_new.extractSignatureInformation_P7M;
+import static rc.so.action.Pdf_new.nullaosta;
+import rc.so.db.Db_Bando;
+import rc.so.entity.Docuserconvenzioni;
+import rc.so.entity.FileDownload;
+import rc.so.entity.SignedDoc;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;

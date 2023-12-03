@@ -1,13 +1,13 @@
-<%@page import="it.refill.entity.Docuserconvenzioni"%>
+<%@page import="rc.so.entity.Docuserconvenzioni"%>
 <%@page import="java.util.StringTokenizer"%>
-<%@page import="it.refill.entity.Reportistica"%>
-<%@page import="it.refill.entity.Domandecomplete"%>
-<%@page import="it.refill.entity.Docbandi"%>
+<%@page import="rc.so.entity.Reportistica"%>
+<%@page import="rc.so.entity.Domandecomplete"%>
+<%@page import="rc.so.entity.Docbandi"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="it.refill.action.Liste"%>
-<%@page import="it.refill.action.Constant"%>
-<%@page import="it.refill.action.ActionB"%>
-<%@page import="it.refill.util.Utility"%>
+<%@page import="rc.so.action.Liste"%>
+<%@page import="rc.so.action.Constant"%>
+<%@page import="rc.so.action.ActionB"%>
+<%@page import="rc.so.util.Utility"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
@@ -24,7 +24,7 @@
         <meta content="" name="description" />
         <meta content="" name="author" />
         <!-- BEGIN GLOBAL MANDATORY STYLES -->
-        <link href="assets/seta/fontg/fontsgoogle1.css" rel="stylesheet" type="text/css" />
+        <link href="assets/soop/fontg/fontsgoogle1.css" rel="stylesheet" type="text/css" />
 
         <link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
@@ -292,7 +292,7 @@
                             <h3 class="page-title">Visualizza <small>Documenti</small></h3>
                         </div>
                         <div class="col-md-3" style="text-align: right;">
-                            <img src="assets/seta/img/logo_blue_1.png" alt="logo" height="70px"/>
+                            <img src="assets/soop/img/logo_blue_1.png" alt="logo" height="70px"/>
                         </div>
                     </div>
 
@@ -475,7 +475,7 @@
 <script src="assets/global/plugins/jquery-easypiechart/jquery.easypiechart.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN PAGE LEVEL PLUGINS -->
-<script src="assets/seta/js/select2.full.min.js" type="text/javascript"></script>
+<script src="assets/soop/js/select2.full.min.js" type="text/javascript"></script>
 <script src="assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN THEME GLOBAL SCRIPTS -->
@@ -487,7 +487,7 @@
 <script src="assets/global/plugins/bootstrap-select/js/bootstrap-select.min.js" type="text/javascript"></script>
 <script src="assets/pages/scripts/components-bootstrap-select.min.js" type="text/javascript"></script>
 <script src="assets/pages/scripts/components-date-time-pickers.min.js" type="text/javascript"></script>
-<script src="assets/seta/js/form-input-mask.min.js" type="text/javascript"></script>
+<script src="assets/soop/js/form-input-mask.min.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <!-- BEGIN THEME LAYOUT SCRIPTS -->
 <script src="assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>

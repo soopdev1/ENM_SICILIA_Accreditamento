@@ -4,7 +4,7 @@
     Author     : raffaele
 --%>
 
-<%@page import="it.refill.action.Constant"%>
+<%@page import="rc.so.action.Constant"%>
 <div class="page-sidebar-wrapper">
     <!-- BEGIN SIDEBAR -->
     <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->

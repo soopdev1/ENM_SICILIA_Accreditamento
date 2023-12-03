@@ -1,6 +1,6 @@
-<%@page import="it.refill.action.Constant"%>
-<%@page import="it.refill.action.ActionB"%>
-<%@page import="it.refill.util.Utility"%>
+<%@page import="rc.so.action.Constant"%>
+<%@page import="rc.so.action.ActionB"%>
+<%@page import="rc.so.util.Utility"%>
 <!DOCTYPE html>
 
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
@@ -19,7 +19,7 @@
         <meta content="" name="author"/>
         <meta name="MobileOptimized" content="320">
         <!-- BEGIN GLOBAL MANDATORY STYLES -->
-        <link href="assets/seta/fontg/fontsgoogle1.css" rel="stylesheet" type="text/css" />
+        <link href="assets/soop/fontg/fontsgoogle1.css" rel="stylesheet" type="text/css" />
 
         <link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
@@ -229,7 +229,7 @@
         <script src="assets/global/plugins/jquery-easypiechart/jquery.easypiechart.min.js" type="text/javascript"></script>
         <!-- END CORE PLUGINS -->
         <!-- BEGIN PAGE LEVEL PLUGINS -->
-        <script src="assets/seta/js/select2.full.min.js" type="text/javascript"></script>
+        <script src="assets/soop/js/select2.full.min.js" type="text/javascript"></script>
         <script src="assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js" type="text/javascript"></script>
         <!-- END PAGE LEVEL PLUGINS -->
         <!-- BEGIN THEME GLOBAL SCRIPTS -->
@@ -241,7 +241,7 @@
         <script src="assets/global/plugins/bootstrap-select/js/bootstrap-select.min.js" type="text/javascript"></script>
         <script src="assets/pages/scripts/components-bootstrap-select.min.js" type="text/javascript"></script>
         <script src="assets/pages/scripts/components-date-time-pickers.min.js" type="text/javascript"></script>
-        <script src="assets/seta/js/form-input-mask.min.js" type="text/javascript"></script>
+        <script src="assets/soop/js/form-input-mask.min.js" type="text/javascript"></script>
         <!-- END PAGE LEVEL SCRIPTS -->
         <script src="assets/pages/scripts/components-bootstrap-select.min.js" type="text/javascript"></script>
         <!-- BEGIN THEME LAYOUT SCRIPTS -->

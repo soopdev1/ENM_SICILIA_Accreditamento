@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-    <display-name>Neet</display-name>
+    <display-name>ENM_SICILIA_Accreditamento</display-name>
     <distributable/>
     <listener>
-        <listener-class>it.refill.servlet.HttpSessionCollector</listener-class>
+        <listener-class>rc.so.servlet.HttpSessionCollector</listener-class>
     </listener>
     <servlet>
         <servlet-name>LoginOperations</servlet-name>
-        <servlet-class>it.refill.servlet.LoginOperations</servlet-class>
+        <servlet-class>rc.so.servlet.LoginOperations</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Download</servlet-name>
-        <servlet-class>it.refill.servlet.Download</servlet-class>
+        <servlet-class>rc.so.servlet.Download</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Query</servlet-name>
-        <servlet-class>it.refill.servlet.Query</servlet-class>
+        <servlet-class>rc.so.servlet.Query</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Operazioni</servlet-name>
-        <servlet-class>it.refill.servlet.Operazioni</servlet-class>
+        <servlet-class>rc.so.servlet.Operazioni</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Upload</servlet-name>
-        <servlet-class>it.refill.servlet.Upload</servlet-class>
+        <servlet-class>rc.so.servlet.Upload</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginOperations</servlet-name>

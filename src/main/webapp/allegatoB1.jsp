@@ -4,17 +4,17 @@
     Author     : rcosco
 --%>
 
-<%@page import="it.refill.entity.Items"%>
-<%@page import="it.refill.entity.AllegatoB"%>
+<%@page import="rc.so.entity.Items"%>
+<%@page import="rc.so.entity.AllegatoB"%>
 <%@page import="java.util.List"%>
-<%@page import="it.refill.entity.Docenti"%>
-<%@page import="it.refill.entity.Domandecomplete"%>
-<%@page import="it.refill.entity.Docbandi"%>
-<%@page import="it.refill.entity.Docuserbandi"%>
+<%@page import="rc.so.entity.Docenti"%>
+<%@page import="rc.so.entity.Domandecomplete"%>
+<%@page import="rc.so.entity.Docbandi"%>
+<%@page import="rc.so.entity.Docuserbandi"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="it.refill.action.ActionB"%>
-<%@page import="it.refill.action.Constant"%>
-<%@page import="it.refill.util.Utility"%>
+<%@page import="rc.so.action.ActionB"%>
+<%@page import="rc.so.action.Constant"%>
+<%@page import="rc.so.util.Utility"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
@@ -67,7 +67,7 @@
         <meta content="" name="description" />
         <meta content="" name="author" />
         <!-- BEGIN GLOBAL MANDATORY STYLES -->
-        <link href="assets/seta/fontg/fontsgoogle1.css" rel="stylesheet" type="text/css" />
+        <link href="assets/soop/fontg/fontsgoogle1.css" rel="stylesheet" type="text/css" />
         <link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -192,17 +192,17 @@
         <script src="assets/global/plugins/bootstrap-select/js/bootstrap-select.min.js" type="text/javascript"></script>
         <script src="assets/pages/scripts/components-bootstrap-select.min.js" type="text/javascript"></script>
         <script src="assets/pages/scripts/components-date-time-pickers.min.js" type="text/javascript"></script>
-        <script src="assets/seta/js/form-input-mask.min.js" type="text/javascript"></script>
+        <script src="assets/soop/js/form-input-mask.min.js" type="text/javascript"></script>
         <!-- END PAGE LEVEL SCRIPTS -->
         <!-- BEGIN THEME LAYOUT SCRIPTS -->
         <script src="assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
         <script src="assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
-        <script type="text/javascript" src="assets/seta/js/moment-with-locales.min.js"></script>
-        <script type="text/javascript" src="assets/seta/js/daterangepicker.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="assets/seta/css/daterangepicker.css" />
+        <script type="text/javascript" src="assets/soop/js/moment-with-locales.min.js"></script>
+        <script type="text/javascript" src="assets/soop/js/daterangepicker.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="assets/soop/css/daterangepicker.css" />
 
         <link href="assets/layouts/layout/css/custom.min.css" rel="stylesheet" type="text/css" />
-        <script src="assets/seta/js/jscontrolli.js"></script>
+        <script src="assets/soop/js/jscontrolli.js"></script>
     </head>
 
     <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white page-sidebar-closed">
@@ -278,7 +278,7 @@
                             <h3 class="page-title">Homepage</h3>
                         </div>
                         <div class="col-md-3" style="text-align: right;">
-                            <img src="assets/seta/img/logo_blue_1.png" alt="logo" height="70px"/>
+                            <img src="assets/soop/img/logo_blue_1.png" alt="logo" height="70px"/>
                         </div>
                     </div>
                     <%

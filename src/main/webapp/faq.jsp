@@ -4,18 +4,18 @@
     Author     : rcosco
 --%>
 
-<%@page import="it.refill.action.Constant"%>
-<%@page import="it.refill.entity.Faq"%>
+<%@page import="rc.so.action.Constant"%>
+<%@page import="rc.so.entity.Faq"%>
 <%@page import="java.util.List"%>
 <%@page import="org.apache.commons.lang3.RandomStringUtils"%>
 <%@page import="org.apache.commons.text.RandomStringGenerator"%>
-<%@page import="it.refill.entity.Domandecomplete"%>
-<%@page import="it.refill.entity.Docbandi"%>
-<%@page import="it.refill.entity.Docuserbandi"%>
+<%@page import="rc.so.entity.Domandecomplete"%>
+<%@page import="rc.so.entity.Docbandi"%>
+<%@page import="rc.so.entity.Docuserbandi"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="it.refill.action.Liste"%>
-<%@page import="it.refill.action.ActionB"%>
-<%@page import="it.refill.util.Utility"%>
+<%@page import="rc.so.action.Liste"%>
+<%@page import="rc.so.action.ActionB"%>
+<%@page import="rc.so.util.Utility"%>
 <%@ page language="java" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
@@ -32,7 +32,7 @@
         <meta content="" name="description" />
         <meta content="" name="author" />
         <!-- BEGIN GLOBAL MANDATORY STYLES -->
-        <link href="assets/seta/fontg/fontsgoogle1.css" rel="stylesheet" type="text/css" />
+        <link href="assets/soop/fontg/fontsgoogle1.css" rel="stylesheet" type="text/css" />
 
         <link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
@@ -56,13 +56,13 @@
         <!-- BEGIN THEME GLOBAL STYLES -->
         <link href="assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
         <link href="assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
-        <script src="assets/seta/js/moment.js" type="text/javascript"></script>
+        <script src="assets/soop/js/moment.js" type="text/javascript"></script>
 
         <!-- FANCYBOX -->
-        <script type="text/javascript" src="assets/seta/js/jquery-1.10.1.min.js"></script>
-        <script type="text/javascript" src="assets/seta/js/jquery.fancybox.js?v=2.1.5"></script>
-        <link rel="stylesheet" type="text/css" href="assets/seta/css/jquery.fancybox.css?v=2.1.5" media="screen" />
-        <script type="text/javascript" src="assets/seta/js/fancy.js"></script>
+        <script type="text/javascript" src="assets/soop/js/jquery-1.10.1.min.js"></script>
+        <script type="text/javascript" src="assets/soop/js/jquery.fancybox.js?v=2.1.5"></script>
+        <link rel="stylesheet" type="text/css" href="assets/soop/css/jquery.fancybox.css?v=2.1.5" media="screen" />
+        <script type="text/javascript" src="assets/soop/js/fancy.js"></script>
 
         <!-- END THEME GLOBAL STYLES -->
         <!-- BEGIN THEME LAYOUT STYLES -->
@@ -81,9 +81,9 @@
         %>
 
         <script src="assets/global/plugins/jquery.min.js" type="text/javascript"></script>
-        <script type="text/javascript" src="assets/seta/js/jquery-1.10.1.min.js"></script>
-        <script type="text/javascript" src="assets/seta/js/bootstrap-show-modal.js"></script>
-        <script src="assets/seta/tinymce/tinymce.min.js?apiKey=ma1upy7t6aft708fnem5ewb25zj40b36gdnl9ovb046gcbqx"></script>
+        <script type="text/javascript" src="assets/soop/js/jquery-1.10.1.min.js"></script>
+        <script type="text/javascript" src="assets/soop/js/bootstrap-show-modal.js"></script>
+        <script src="assets/soop/tinymce/tinymce.min.js?apiKey=ma1upy7t6aft708fnem5ewb25zj40b36gdnl9ovb046gcbqx"></script>
     </head>
     <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white page-sidebar-closed">
         <%@ include file="menu/header.jsp"%>
@@ -210,7 +210,7 @@
                             <h3 class="page-title">FAQ</h3>
                         </div>
                         <div class="col-md-3" style="text-align: right;">
-                            <img src="assets/seta/img/logo_blue_1.png" alt="logo" height="70px"/>
+                            <img src="assets/soop/img/logo_blue_1.png" alt="logo" height="70px"/>
                         </div>
                     </div>
                     <div class="faq-page faq-content-1">
@@ -392,7 +392,7 @@
     <script src="assets/global/plugins/jquery-easypiechart/jquery.easypiechart.min.js" type="text/javascript"></script>
     <!-- END CORE PLUGINS -->
     <!-- BEGIN PAGE LEVEL PLUGINS -->
-    <script src="assets/seta/js/select2.full.min.js" type="text/javascript"></script>
+    <script src="assets/soop/js/select2.full.min.js" type="text/javascript"></script>
     <script src="assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js" type="text/javascript"></script>
     <!-- END PAGE LEVEL PLUGINS -->
     <!-- BEGIN THEME GLOBAL SCRIPTS -->
@@ -404,7 +404,7 @@
     <script src="assets/global/plugins/bootstrap-select/js/bootstrap-select.min.js" type="text/javascript"></script>
     <script src="assets/pages/scripts/components-bootstrap-select.min.js" type="text/javascript"></script>
     <script src="assets/pages/scripts/components-date-time-pickers.min.js" type="text/javascript"></script>
-    <script src="assets/seta/js/form-input-mask.min.js" type="text/javascript"></script>
+    <script src="assets/soop/js/form-input-mask.min.js" type="text/javascript"></script>
     <!-- END PAGE LEVEL SCRIPTS -->
     <!-- BEGIN THEME LAYOUT SCRIPTS -->
     <script src="assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>

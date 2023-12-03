@@ -5,18 +5,18 @@
 --%>
 
 <%@page import="java.util.List"%>
-<%@page import="it.refill.entity.AllegatoB"%>
-<%@page import="it.refill.entity.Items"%>
-<%@page import="it.refill.entity.Prov_rc"%>
-<%@page import="it.refill.entity.Docenti"%>
-<%@page import="it.refill.entity.Domandecomplete"%>
-<%@page import="it.refill.entity.Docbandi"%>
-<%@page import="it.refill.entity.Docuserbandi"%>
+<%@page import="rc.so.entity.AllegatoB"%>
+<%@page import="rc.so.entity.Items"%>
+<%@page import="rc.so.entity.Prov_rc"%>
+<%@page import="rc.so.entity.Docenti"%>
+<%@page import="rc.so.entity.Domandecomplete"%>
+<%@page import="rc.so.entity.Docbandi"%>
+<%@page import="rc.so.entity.Docuserbandi"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="it.refill.action.Liste"%>
-<%@page import="it.refill.action.Constant"%>
-<%@page import="it.refill.action.ActionB"%>
-<%@page import="it.refill.util.Utility"%>
+<%@page import="rc.so.action.Liste"%>
+<%@page import="rc.so.action.Constant"%>
+<%@page import="rc.so.action.ActionB"%>
+<%@page import="rc.so.util.Utility"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
@@ -33,7 +33,7 @@
         <meta content="" name="description" />
         <meta content="" name="author" />
         <!-- BEGIN GLOBAL MANDATORY STYLES -->
-        <link href="assets/seta/fontg/fontsgoogle1.css" rel="stylesheet" type="text/css" />
+        <link href="assets/soop/fontg/fontsgoogle1.css" rel="stylesheet" type="text/css" />
         <link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -107,9 +107,7 @@
                     var ch5 = document.getElementsByName("ch5")[0].checked;
                     var ch6 = document.getElementsByName("ch6")[0].checked;
                     var ch7 = document.getElementsByName("ch7")[0].checked;
-                    var regione = document.getElementById("regione").value.trim();
                     var iscrizione = document.getElementById("iscrizione").value.trim();
-                    var regione2 = document.getElementById("regione2").value.trim();
                     var iscrizione2 = document.getElementById("iscrizione2").value.trim();
                     var aule = document.getElementById("aule").value.trim();
 
@@ -287,22 +285,11 @@
                         output = "1";
                         msg += "<span style='color:red;'>Hai selezionato 'Previsione nell’oggetto sociale e/o nel codice ATECO dell’attivit&#224; di formazione o consulenza per la creazione, gestione, accompagnamento all’attivit&#224; d’impresa'.<br>E' obbligatorio selezionare 'Soggetto privato con i seguenti requisiti:'</span><br/>";
                     }
-                    if (ch4 === true && ch5 === true && (regione === "" || iscrizione === "")) {
+                    if (ch4 === true && ch5 === true && iscrizione === "") {
                         output = "1";
-                        msg += "<span style='color:red;'>E' obbligatorio copilare i campi che seguono 'presso la Regione' e 'n. di iscrizione'</span><br/>";
+                        msg += "<span style='color:red;'>E' obbligatorio copilare il campo 'n. di iscrizione'</span><br/>";
                     }
 
-                    if (regione !== ""
-                            && ch4 === false) {
-                        output = "1";
-                        msg += "<span style='color:red;'>Hai compilato il campo 'presso la Regione', devi selezionare la voce: 'Soggetto privato con i seguenti requisiti:'</span><br/>";
-                    }
-
-                    if (regione !== ""
-                            && ch5 === false) {
-                        output = "1";
-                        msg += "<span style='color:red;'>Hai compilato il campo 'presso la Regione', devi selezionare la voce: 'Accreditato per la formazione' </span><br/>";
-                    }
                     if (iscrizione !== "" && ch4 === false) {
                         output = "1";
                         msg += "<span style='color:red;'>Hai compilato il campo 'n. di iscrizione', devi selezionare la voce: 'Soggetto privato con i seguenti requisiti:' </span><br/>";
@@ -310,14 +297,6 @@
                     if (iscrizione !== "" && ch5 === false) {
                         output = "1";
                         msg += "<span style='color:red;'>Hai compilato il campo 'n. di iscrizione', devi selezionare la voce: 'Accreditato per la formazione' </span><br/>";
-                    }
-                    if (regione2 !== "" && ch4 === false) {
-                        output = "1";
-                        msg += "<span style='color:red;'>Hai compilato il campo 'presso la Regione', devi selezionare la voce: 'Soggetto privato con i seguenti requisiti:' </span><br/>";
-                    }
-                    if (regione2 !== "" && ch6 === false) {
-                        output = "1";
-                        msg += "<span style='color:red;'>Hai compilato il campo 'presso la Regione', devi selezionare la voce: 'Accreditato per i servizi' </span><br/>";
                     }
                     if (iscrizione2 !== "" && ch4 === false) {
                         output = "1";
@@ -327,9 +306,9 @@
                         output = "1";
                         msg += "<span style='color:red;'>Hai compilato il campo 'n. di iscrizione', devi selezionare la voce: 'Accreditato per i servizi' </span><br/>";
                     }
-                    if (ch4 === true && ch6 === true && (regione2 === "" || iscrizione2 === "")) {
+                    if (ch4 === true && ch6 === true &&  iscrizione2 === "") {
                         output = "1";
-                        msg += "<span style='color:red;'>E' obbligatorio copilare i campi che seguono 'presso la Regione' e 'n. di iscrizione'</span><br/>";
+                        msg += "<span style='color:red;'>E' obbligatorio copilare il campo 'n. di iscrizione'</span><br/>";
                     }
                     //PUNTO 4
 
@@ -793,17 +772,17 @@
         <script src="assets/global/plugins/bootstrap-select/js/bootstrap-select.min.js" type="text/javascript"></script>
         <script src="assets/pages/scripts/components-bootstrap-select.min.js" type="text/javascript"></script>
         <script src="assets/pages/scripts/components-date-time-pickers.min.js" type="text/javascript"></script>
-        <script src="assets/seta/js/form-input-mask.min.js" type="text/javascript"></script>
+        <script src="assets/soop/js/form-input-mask.min.js" type="text/javascript"></script>
         <!-- END PAGE LEVEL SCRIPTS -->
         <!-- BEGIN THEME LAYOUT SCRIPTS -->
         <script src="assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
         <script src="assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
-        <script type="text/javascript" src="assets/seta/js/moment-with-locales.min.js"></script>
-        <script type="text/javascript" src="assets/seta/js/daterangepicker.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="assets/seta/css/daterangepicker.css" />
+        <script type="text/javascript" src="assets/soop/js/moment-with-locales.min.js"></script>
+        <script type="text/javascript" src="assets/soop/js/daterangepicker.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="assets/soop/css/daterangepicker.css" />
 
         <link href="assets/layouts/layout/css/custom.min.css" rel="stylesheet" type="text/css" />
-        <script src="assets/seta/js/jscontrolli.js"></script>
+        <script src="assets/soop/js/jscontrolli.js"></script>
 
     </head>
 
@@ -882,7 +861,7 @@
                             <h3 class="page-title">Inserimento Dati</h3>
                         </div>
                         <div class="col-md-3" style="text-align: right;">
-                            <img src="assets/seta/img/logo_blue_1.png" alt="logo" height="70px"/>
+                            <img src="assets/soop/img/logo_blue_1.png" alt="logo" height="70px"/>
                         </div>
                     </div>
                     <%
@@ -1028,21 +1007,9 @@
                                                             <span class="check"></span>
                                                             <span class="box"></span>
                                                         </label>
-                                                        Accreditato per la formazione professionale presso la Regione 
-                                                        <select id="regione" name="regione" class="form-control select2" data-placeholder="..." >
-                                                            <option value="">...</option>
-                                                            <%for (int p = 0; p < reg.size(); p++) {%>
-                                                            <option value="<%=reg.get(p).getCodiceprovincia()%>"><%=reg.get(p).getProvincia().toUpperCase()%></option>
-                                                            <%}%>
-                                                        </select>
-                                                        <script type="text/javascript">
-                                                            $('#' + 'regione').select2({
-                                                                allowClear: true,
-                                                                theme: "classic",
-                                                                language: 'it'
-                                                            });
-                                                        </script>
-                                                        n. di iscrizione 
+                                                        <input type="hidden" name="regione" id="regione" value="0" />
+                                                        <input type="hidden" name="regione2" id="regione2" value="0" />
+                                                        Accreditato per la formazione professionale presso la Regione Siciliana con n. di iscrizione 
                                                         <input class="form-control form-control-static uppercase" maxlength="20"
                                                                id="iscrizione" name="iscrizione" style="width: 200px" placeholder="...." type="text"/>
                                                     </div><br/>
@@ -1053,21 +1020,7 @@
                                                             <span class="check"></span>
                                                             <span class="box"></span> 
                                                         </label>
-                                                        Accreditato per i servizi per il lavoro presso la Regione 
-                                                        <select id="regione2" name="regione2" class="form-control select2" data-placeholder="..." >
-                                                            <option value="">...</option>
-                                                            <%for (int p = 0; p < reg.size(); p++) {%>
-                                                            <option value="<%=reg.get(p).getCodiceprovincia()%>"><%=reg.get(p).getProvincia().toUpperCase()%></option>
-                                                            <%}%>
-                                                        </select>
-                                                        <script type="text/javascript">
-                                                            $('#' + 'regione2').select2({
-                                                                allowClear: true,
-                                                                theme: "classic",
-                                                                language: 'it'
-                                                            });
-                                                        </script>
-                                                        n. di iscrizione
+                                                        Accreditato per i servizi per il lavoro presso la Regione Siciliana con n. di iscrizione
                                                         <input class="form-control form-control-static  uppercase" id="iscrizione2" name="iscrizione2" style="width: 200px"  maxlength="20"
                                                                placeholder="...." type="text" />
                                                     </div><br/>
@@ -1096,8 +1049,6 @@
                                                         $('#ch5').attr("disabled", true);
                                                         $('#ch6').attr("disabled", true);
                                                         $('#ch7').attr("disabled", true);
-                                                        disable_sel2('regione', 'formModelloA');
-                                                        disable_sel2('regione2', 'formModelloA');
                                                         $('#iscrizione').prop('readonly', true);
                                                         $('#iscrizione2').prop('readonly', true);
                                                     } else {
@@ -1105,8 +1056,6 @@
                                                         $('#ch5').attr("disabled", false);
                                                         $('#ch6').attr("disabled", false);
                                                         $('#ch7').attr("disabled", false);
-                                                        enable_sel2('regione', 'formModelloA');
-                                                        enable_sel2('regione2', 'formModelloA');
                                                         $('#iscrizione').prop('readonly', false);
                                                         $('#iscrizione2').prop('readonly', false);
                                                     }
@@ -1124,8 +1073,6 @@
                                                         $('#ch5').attr("disabled", true);
                                                         $('#ch6').attr("disabled", true);
                                                         $('#ch7').attr("disabled", true);
-                                                        disable_sel2('regione', 'formModelloA');
-                                                        disable_sel2('regione2', 'formModelloA');
                                                         $('#iscrizione').prop('readonly', true);
                                                         $('#iscrizione2').prop('readonly', true);
                                                     } else {
@@ -1133,8 +1080,6 @@
                                                         $('#ch5').attr("disabled", false);
                                                         $('#ch6').attr("disabled", false);
                                                         $('#ch7').attr("disabled", false);
-                                                        enable_sel2('regione', 'formModelloA');
-                                                        enable_sel2('regione2', 'formModelloA');
                                                         $('#iscrizione').prop('readonly', false);
                                                         $('#iscrizione2').prop('readonly', false);
                                                     }
@@ -1152,8 +1097,6 @@
                                                         $('#ch5').attr("disabled", true);
                                                         $('#ch6').attr("disabled", true);
                                                         $('#ch7').attr("disabled", true);
-                                                        disable_sel2('regione', 'formModelloA');
-                                                        disable_sel2('regione2', 'formModelloA');
                                                         $('#iscrizione').prop('readonly', true);
                                                         $('#iscrizione2').prop('readonly', true);
                                                     } else {
@@ -1161,8 +1104,6 @@
                                                         $('#ch5').attr("disabled", false);
                                                         $('#ch6').attr("disabled", false);
                                                         $('#ch7').attr("disabled", false);
-                                                        enable_sel2('regione', 'formModelloA');
-                                                        enable_sel2('regione2', 'formModelloA');
                                                         $('#iscrizione').prop('readonly', false);
                                                         $('#iscrizione2').prop('readonly', false);
                                                     }
@@ -1184,8 +1125,6 @@
                                                             return false;
                                                         });
 
-                                                        enable_sel2('regione', 'formModelloA');
-                                                        enable_sel2('regione2', 'formModelloA');
                                                         $('#iscrizione').prop('readonly', false);
                                                         $('#iscrizione2').prop('readonly', false);
                                                     } else {
@@ -1195,14 +1134,10 @@
                                                         $('#ch7').prop("onclick", null);
                                                         /////////////////////////////
                                                         $('#ch5').prop('checked', false);
-                                                        $('#regione').val($('#regione option:first-child').val()).trigger('change');
                                                         $('#iscrizione').val('');
                                                         $('#ch6').prop('checked', false);
-                                                        $('#regione2').val($('#regione2 option:first-child').val()).trigger('change');
                                                         $('#iscrizione2').val('');
                                                         $('#ch7').prop('checked', false);
-                                                        disable_sel2('regione', 'formModelloA');
-                                                        disable_sel2('regione2', 'formModelloA');
                                                         $('#iscrizione').prop('readonly', true);
                                                         $('#iscrizione2').prop('readonly', true);
                                                     }
@@ -1213,10 +1148,8 @@
                                                         $('#ch4').prop('checked', true);
                                                     } else {
                                                         if (this.id === 'ch5') {
-                                                            $('#regione').val($('#regione option:first-child').val()).trigger('change');
                                                             $('#iscrizione').val('');
                                                         } else if (this.id === 'ch6') {
-                                                            $('#regione2').val($('#regione2 option:first-child').val()).trigger('change');
                                                             $('#iscrizione2').val('');
                                                         }
                                                     }
@@ -2345,6 +2278,7 @@
                                                                         <option value="">...</option>
                                                                         <option value="A">FASCIA A</option>
                                                                         <option value="B">FASCIA B</option>
+                                                                        <option value="C">FASCIA C</option>
                                                                     </select>
                                                                     </select>
                                                                     <script type="text/javascript">

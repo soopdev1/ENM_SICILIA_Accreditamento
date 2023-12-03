@@ -1,10 +1,10 @@
 <%@ page language="java" pageEncoding="UTF-8" session="false"%>
 
-<%@page import="it.refill.entity.Faq"%>
+<%@page import="rc.so.entity.Faq"%>
 <%@page import="java.util.List"%>
-<%@page import="it.refill.action.ActionB"%>
-<%@page import="it.refill.action.Label"%>
-<%@page import="it.refill.action.Constant"%>
+<%@page import="rc.so.action.ActionB"%>
+<%@page import="rc.so.action.Label"%>
+<%@page import="rc.so.action.Constant"%>
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
@@ -21,7 +21,7 @@
         <meta content="" name="description" />
         <meta content="" name="author" />
         <!-- BEGIN GLOBAL MANDATORY STYLES -->
-        <link href="assets/seta/fontg/fontsgoogle1.css" rel="stylesheet" type="text/css" />
+        <link href="assets/soop/fontg/fontsgoogle1.css" rel="stylesheet" type="text/css" />
         <link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -48,9 +48,7 @@
     <body class="login" style="background-image: url(assets/pages/img/bg-3.jpg);">
         <!-- BEGIN LOGO -->
         <div class="logo">
-            <img src="assets/seta/img/l3-cu.png" alt="" height="54px"/>
-            <img src="assets/seta/img/l2-gg.png" alt="" height="54px"/>
-            <img src="assets/seta/img/l1-an.png" alt="" height="54px"/>
+            <img src="assets/soop/img/ban1.jpg" alt="" height="125px"/>
         </div>
         <!-- END LOGO -->
         <!-- BEGIN LOGIN -->
@@ -60,7 +58,7 @@
                 <span class="bold text-center text-primary center-block h3">YES I STARTUP 2021/2022 <br>FAQ</span>
                     <%if (Constant.test) {%>
                 <br>
-                <span class="bold text-center text-primary center-block"><img src="assets/seta/img/beta.png" alt="" height="100"/></span>
+                <span class="bold text-center text-primary center-block"><img src="assets/soop/img/beta.png" alt="" height="100"/></span>
                     <%}%>
             </div>
             <div>
@@ -149,8 +147,8 @@
         </div>
 
         <div class="logo"> 
-            <img src="assets/seta/img/logo_blue_1.png" alt="" height="75"/>
-            <img src="assets/seta/img/l4-yis.png" alt="" height="75"/>
+            <img src="assets/soop/img/logo_blue_1.png" alt="" height="75"/>
+            <img src="assets/soop/img/l4-yis.png" alt="" height="75"/>
         </div>
         <!-- END LOGIN -->
         <!--[if lt IE 9]>
