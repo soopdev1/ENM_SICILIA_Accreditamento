@@ -181,7 +181,7 @@ public class Utility {
             if (dat.length() == pattern1.length()) {
                 DateTimeFormatter fmt = forPattern(pattern1);
                 DateTime dtout = fmt.parseDateTime(dat);
-                return dtout.toString(pattern2, ITALY);
+                return dtout.toString(pattern2);
             }
         } catch (Exception e) {
             trackingAction("ERROR SYSTEM", estraiEccezione(e));

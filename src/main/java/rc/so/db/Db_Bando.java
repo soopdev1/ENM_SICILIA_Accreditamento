@@ -68,6 +68,7 @@ import static org.apache.commons.validator.routines.EmailValidator.getInstance;
 import org.joda.time.DateTime;
 import static org.joda.time.format.DateTimeFormat.forPattern;
 import org.joda.time.format.DateTimeFormatter;
+import static rc.so.action.Constant.conf;
 
 /**
  * @author raffaele
@@ -75,8 +76,7 @@ import org.joda.time.format.DateTimeFormatter;
 public class Db_Bando {
 
     private Connection c = null;
-    private static final ResourceBundle conf = ResourceBundle.getBundle("conf.conf");
-
+    
     public Db_Bando() {
 
         String driver = "com.mysql.cj.jdbc.Driver";

@@ -5,6 +5,7 @@
  */
 package rc.so.action;
 
+import java.util.ResourceBundle;
 import static rc.so.action.ActionB.trackingAction;
 import static rc.so.util.Utility.estraiEccezione;
 import static rc.so.util.Utility.formatStringtoStringDate;
@@ -15,14 +16,15 @@ import org.joda.time.format.DateTimeFormatter;
 
 public class Constant {
 
+    public static final ResourceBundle conf = ResourceBundle.getBundle("conf.conf");
+
     public static final String bando = "BAEN1";
-    public static final boolean test = true;
+    public static final boolean test = conf.getString("test").equals("SI");
     public static final boolean demo = false;
     public static final boolean faq = true;
     public static final String nomevisual = "YES I START UP - SICILIA";
     public static final String version = "1.0";
-    
-    
+
     //Classic
     public static final String slash = "/";
 
@@ -50,14 +52,14 @@ public class Constant {
     public static final String timestamp = "yyyyMMddHHmmssSSS";
 
     ///////////////////////////////////////////////////////////////////
-    public static final String datainizio = formatStringtoStringDate("2021-03-01",
+    public static final String datainizio = formatStringtoStringDate("2023-12-20",
             patternSql, patternITA, false);
     ///////////////////////////////////////////////////////////////////
 
     public static boolean checkRegistrazione() {
         try {
             DateTimeFormatter formatter = forPattern(patternSql);
-            DateTime inizio = formatter.parseDateTime("2021-03-01").withMillisOfDay(0);
+            DateTime inizio = formatter.parseDateTime("2023-12-20").withMillisOfDay(0);
             DateTime oggi = new DateTime().withMillisOfDay(0);
             boolean ok = inizio.isBefore(oggi) || inizio.isEqual(oggi);
             return ok;

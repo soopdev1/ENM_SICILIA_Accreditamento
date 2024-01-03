@@ -14,7 +14,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
-import java.util.ResourceBundle;
+import static rc.so.action.Constant.conf;
 
 /**
  *
@@ -23,8 +23,6 @@ import java.util.ResourceBundle;
 public class Db_OTP {
 
     private Connection conn = null;
-    private static final ResourceBundle conf = ResourceBundle.getBundle("conf.conf");
-
     public Db_OTP() {
 
         String driver = "com.mysql.cj.jdbc.Driver";
